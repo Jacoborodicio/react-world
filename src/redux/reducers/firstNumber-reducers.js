@@ -5,7 +5,7 @@ export const firstNumber = (state, action) => {
         case constants.HANDLE_FIRST_NUMBER: {
             return {
                 ...state,
-                firstNumber: action.payload.firstNumber
+                firstNumber: action.payload.number
             }
         }
         default: return state;

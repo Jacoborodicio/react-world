@@ -8,6 +8,7 @@ import { getNews } from "../../redux/actions/global-actions";
 import { changeName } from "../../redux/actions/forms-actions";
 import { handleFirstNumberChange } from "../../redux/actions/firstNumber-action";
 import { handleSecondNumberChange } from "../../redux/actions/secondNumber-actions";
+import { sumFirstSecond } from "../../redux/actions/operations-actions";
 const styles = {
     appBar: {
         width: '100%',
@@ -41,6 +42,7 @@ class Home extends Component {
     changeSecondNumber = number => {
         this.props.handleSecondNumberChange({number});
     }
+    sum = () => this.props.sumFirstSecond();
   render() {
      
       const {classes} = this.props;
@@ -51,8 +53,10 @@ class Home extends Component {
             </Grid>
             <Grid item xs={12}>
                 <input type='text' onChange={(e) => this.changeName(e.target.value)} />
-                <input type='number' onChange={(e) => this.changeFirstNumber(e.target.value)} />
-                <input type='number' onChange={(e) => this.changeSecondNumber(e.target.value)} />
+                <input type='number' onChange={(e) => this.changeFirstNumber(+e.target.value)} />
+                <input type='number' onChange={(e) => this.changeSecondNumber(+e.target.value)} />
+                <button onClick={() => this.sum()} >Sum!</button>
+                <p>{this.props.result}</p>
             </Grid>
             {/* <Grid item xs={3} className={classes.sideBar}>
                 Here may be frecuent topics
@@ -71,14 +75,15 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     console.log("State desde props: ",state)
-    const {items} = state;
-    return {items};
+    const {items, result} = state;
+    return {items, result};
 }
 const mapDispatchToProps = {
     getNews,
     changeName,
     handleFirstNumberChange,
-    handleSecondNumberChange
+    handleSecondNumberChange,
+    sumFirstSecond
 }
 export default connect(
     mapStateToProps,

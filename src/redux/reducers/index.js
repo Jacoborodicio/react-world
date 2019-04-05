@@ -3,6 +3,7 @@ import {globalReducer} from "./global-reducers";
 import { formsReducer } from "./forms-reducers";
 import { firstNumber } from "./firstNumber-reducers";
 import { secondNumber } from "./secondNumber-reducers";
+import { operationsReducer } from "./operations-reducers";
 
 const initialState = {
     items: [],
@@ -10,7 +11,8 @@ const initialState = {
     age: null,
     address: null,
     firstNumber: null,
-    secondNumber: null
+    secondNumber: null,
+    result: null,
 }
 
 export const reducer = reduceReducers(
@@ -19,4 +21,5 @@ export const reducer = reduceReducers(
     formsReducer,
     firstNumber,
     secondNumber,
+    operationsReducer
 )
