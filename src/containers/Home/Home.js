@@ -51,13 +51,18 @@ class Home extends Component {
             <Grid item xs={12} className={classes.appBar}>
                 <NavBar onChange={this.handleSearch}/>
             </Grid>
-            <Grid item xs={12}>
-                <input type='text' onChange={(e) => this.changeName(e.target.value)} />
-                <input type='number' onChange={(e) => this.changeFirstNumber(+e.target.value)} />
-                <input type='number' onChange={(e) => this.changeSecondNumber(+e.target.value)} />
-                <button onClick={() => this.sum()} >Sum!</button>
-                <p>{this.props.result}</p>
-            </Grid>
+            {
+                this.props.checkReducersThema && (
+                    <Grid item xs={12}>
+                        <input type='text' onChange={(e) => this.changeName(e.target.value)} />
+                        <input type='number' onChange={(e) => this.changeFirstNumber(+e.target.value)} />
+                        <input type='number' onChange={(e) => this.changeSecondNumber(+e.target.value)} />
+                        <button onClick={() => this.sum()} >Sum!</button>
+                        <p>{this.props.result}</p>
+                    </Grid>
+
+                )
+            }
             {/* <Grid item xs={3} className={classes.sideBar}>
                 Here may be frecuent topics
             </Grid> */}
@@ -75,8 +80,8 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     console.log("State desde props: ",state)
-    const {items, result} = state;
-    return {items, result};
+    const {items, result, checkReducersThema} = state;
+    return {items, result, checkReducersThema};
 }
 const mapDispatchToProps = {
     getNews,

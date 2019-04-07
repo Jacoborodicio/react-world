@@ -3,7 +3,6 @@ import createSagaMiddleware from 'redux-saga'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import {reducer} from '../reducers';
-// import { globalReducer } from "../reducers/global-reducers";
 import rootSaga from '../sagas/saga'
 
 // create the saga middleware

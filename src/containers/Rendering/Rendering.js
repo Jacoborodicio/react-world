@@ -1,28 +1,33 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar/NavBar';
 import { withStyles } from '@material-ui/core';
-
-
+import  {ShowItem}  from "./auxiliarComponents/ShowItem";
+import { IsolatedComponent } from "./auxiliarComponents/isolatedComponent";
 const styles = {
   firstExample: {
     backgroundColor: '#ddd',
     '& .input': {
       margin: '1rem',
     }
+  },
+  mainContainer: {
+    backgroundColor: '#FFF',
+    border: '1px solid #BBB',
   }
 }
 
 class Rendering extends Component {
   state = {
-    firstText: null,
-    secondText: null,
+    firstText: 'First Text',
+    secondText: 'Second Text',
     thirdText: null,
-    name: 'Jacobo'
+    name: 'Jacobo',
+    items: ['Hola', 'que', 'tal', 'estás', '?']
   }
   handleInput = event => {
-    const firstText = event.target.value;
+    const name = event.target.value;
     this.setState({
-      firstText
+      name
     })
   }
   render() {
@@ -40,9 +45,10 @@ class Rendering extends Component {
           onChange={this.handleInput}
         />
       <div>
-        <h4>Example of other part which shouldn't be rendered</h4>
-        <p>Only when it contains some parts from the state, e.g. name: {this.state.firstText}</p>
+        <p>It contains some parts from the state:</p>
+        <ShowItem items={this.state.items} classes={classes} />
       </div>
+      <IsolatedComponent />
       </div>
 
       </>

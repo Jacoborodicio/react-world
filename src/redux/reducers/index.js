@@ -13,6 +13,7 @@ const initialState = {
     firstNumber: null,
     secondNumber: null,
     result: null,
+    checkReducersThema: false, // Variable to control if showing or not inputs (reducerReducers testing) in Home
 }
 
 export const reducer = reduceReducers(
