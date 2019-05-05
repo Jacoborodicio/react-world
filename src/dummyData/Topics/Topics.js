@@ -35,4 +35,10 @@ export const topics = [
         resume: 'Using different techniques like debounding to avoid problems with performance',
         link: '/performance'
     },
+    {
+        id: 6,
+        title: 'Relative advanced topics',
+        resume: 'Place to test new stuff and advanced techniques',
+        link: '/advanced'
+    },
 ]

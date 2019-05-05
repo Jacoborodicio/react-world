@@ -9,6 +9,7 @@ import { changeName } from "../../redux/actions/forms-actions";
 import { handleFirstNumberChange } from "../../redux/actions/firstNumber-action";
 import { handleSecondNumberChange } from "../../redux/actions/secondNumber-actions";
 import { sumFirstSecond } from "../../redux/actions/operations-actions";
+
 const styles = {
     appBar: {
         width: '100%',

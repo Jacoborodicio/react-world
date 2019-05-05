@@ -7,6 +7,7 @@ import Rendering from './containers/Rendering/Rendering';
 import Styling from './containers/Styling/Styling';
 import Spliting from './containers/Spliting/Spliting';
 import Performance from './containers/Performance/Performance';
+import Advanced from './containers/Advanced/Advanced';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
         <Route path="/styling" component={Styling} />
         <Route path="/spliting" component={Spliting} />
         <Route path="/performance" component={Performance} />
+        <Route path="/advanced" component={Advanced} />
       </BrowserRouter>
       </div>
     );
