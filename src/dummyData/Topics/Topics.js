@@ -41,4 +41,10 @@ export const topics = [
         resume: 'Place to test new stuff and advanced techniques',
         link: '/advanced'
     },
+    {
+        id: 7,
+        title: 'Forms on React',
+        resume: 'Testing different approaches of dealing with user input',
+        link: '/forms'
+    },
 ]
